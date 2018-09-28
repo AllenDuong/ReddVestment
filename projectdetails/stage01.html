@@ -1,0 +1,25 @@
+<p></p>
+<h1><span style="text-decoration: underline;"><strong><span style="text-decoration: underline;">ReddVestment</span> - Stage 01:&nbsp;Project Details</strong></span></h1>
+<p><a href="https://drive.google.com/file/d/1iZEwb-s9gtvQeVtfZUhpKuEXwnYAOEGh/view?usp=sharing" target="_blank" rel="noopener">ER Diagram</a></p>
+<h3><strong>Description:</strong></h3>
+<p>Our project is a web app where users view new Reddit posts and &ldquo;buy&rdquo; posts using an artificial point system. Users win points if their post gains karma over the course of N hours, and lose points if it does not gain karma.</p>
+<h3><strong>Usefulness:</strong></h3>
+<p>Our application is a game, so it is used for entertainment and to understand what aspects go towards a successful Reddit post. Additionally, it will allow a user to customize their own post, and we would provide suggestions on how they could improve their post.</p>
+<h3><strong>Realness:</strong></h3>
+<p>All of our data will be coming from Reddit. We will create a script that parses through the top subreddits and tracks karma, user, title keywords, post-type, outgoing domain and time posted to understand how these different components make a post popular, or unpopular. This data will be used to analyze the average growth of a post given a certain subreddit. We will then use TensorFlow to find trends in the data to predict how successful a post will be.</p>
+<h3><strong>Functionality:</strong></h3>
+<ol>
+<li>Basic Functions:
+<ol>
+<li>Scrape json metadata from Reddit posts and add the data into our database in a &ldquo;Reddit&rdquo; table. A user&rsquo;s investments are added into a separate &ldquo;Investment&rdquo; table.</li>
+<li>Reddit data can be deleted manually, and after N weeks the old metadata will be deleted from the database. Investment data for a post is deleted when the user decides to &ldquo;sell&rdquo; his or her investment in that post.</li>
+<li>Reddit data will be updated such that whenever a new amount of points is recorded on a post, some &ldquo;karma&rdquo; list within the &ldquo;Investment&rdquo; table is updated to add this new point.</li>
+</ol>
+</li>
+<li>Advanced Functions:
+<ol>
+<li>Our first advanced function will be an algorithm to predict the growth of a post based on its title, subreddit, time of post, post-type, outgoing domain, and user. This algorithm will be implemented with a recursive neural network via TensorFlow in order to incorporate karma trends.</li>
+<li>Our second advanced function will be a post suggestor. Based on the time of day and subreddit, this function will suggest keywords to include in the title to maximize upvotes. Additionally, we will allow the user to post to reddit through the app with the use of Reddit's API.</li>
+</ol>
+</li>
+</ol>

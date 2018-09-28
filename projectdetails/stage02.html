@@ -1,0 +1,84 @@
+<p>&nbsp;</p>
+<h1><span style="text-decoration: underline;"><strong><span style="text-decoration: underline;">ReddVestment</span> - Stage 02:&nbsp;Development Plan</strong></span></h1>
+<h2><strong>Relational Schema</strong></h2>
+<ul>
+<li><span style="font-weight: 400;"><span style="text-decoration: underline;">Database Schema:</span> </span>
+<ul>
+<li><span style="font-weight: 400;">ReddVestment(Posts, Players, Investments) = {Players, Posts&nbsp;&rarr; Investments}</span></li>
+</ul>
+</li>
+<li><span style="font-weight: 400;"><span style="text-decoration: underline;">Table Schema:</span> </span>
+<ul>
+<li><span style="font-weight: 400;">Posts(subreddit, created, </span><span style="text-decoration: underline;"><span style="font-weight: 400;">id</span></span><span style="font-weight: 400;">, author, title, url, score, is_self, gilded) = {id &rarr; title}</span></li>
+<li><span style="font-weight: 400;">Players(</span><span style="text-decoration: underline;"><span style="font-weight: 400;">id</span></span><span style="font-weight: 400;">, name, current_points, number_of_investments) = {id &rarr; name}</span></li>
+<li><span style="font-weight: 400;">Investments(</span><span style="text-decoration: underline;"><span style="font-weight: 400;">player_id</span></span><span style="font-weight: 400;">, </span><span style="text-decoration: underline;"><span style="font-weight: 400;">post_id</span></span><span style="font-weight: 400;">, points_invested, current_value, time_of_investment, predicted_value)</span></li>
+</ul>
+</li>
+</ul>
+<h2><strong>Database and Software Platforms:</strong></h2>
+<ul>
+<li>AngularJS</li>
+<li>Apache Server</li>
+<li>CSS3 + HTML5 + PHP</li>
+<li>GitHub</li>
+<li>MySQL</li>
+<li>Python</li>
+<li>TensorFlow ML</li>
+</ul>
+<h2><strong>Data Acquisition and Source:</strong></h2>
+<ul>
+<li>The source of our data will be directly from Reddit&rsquo;s servers via parsing JSON formatted data from their API
+<ul>
+<li>JSON data can be accessed by requesting the following: <a href="https://reddit.com/r/[yoursubreddithere].json">https://reddit.com/r/[yoursubreddithere].json</a></li>
+</ul>
+</li>
+<li>The top N subreddits, where N is a steadily increasing integer, will be scraped periodically</li>
+</ul>
+<h2><strong>Division of Labor:</strong></h2>
+<ul>
+<li>Labor is tentatively divided as follows:
+<ul>
+<li><span style="font-weight: 400;">Front End (Presentation): Allen Duong, Timothy Blazek</span></li>
+<li><span style="font-weight: 400;">Back End (Algorithm + Logic):&nbsp; Allen Duong, Timothy Blazek, Patrick Fischer, Nick Marcopoli</span></li>
+<li><span style="font-weight: 400;">Back End (Database):&nbsp; Patrick Fischer, Nick Marcopoli</span></li>
+</ul>
+</li>
+</ul>
+<h2><strong>Project Timeline:</strong></h2>
+<table style="height: 190px; width: 779px;" border="2">
+<tbody>
+<tr style="background-color: grey; color: white;">
+<td style="width: 218px;">Deadline</td>
+<td style="width: 551px;">Goal</td>
+</tr>
+<tr>
+<td style="width: 218px;">&nbsp;<strong>October 5 [Friday]</strong></td>
+<td style="width: 551px;">Develop a method to scrape data from Reddit and insert into the database, and a mock-up for the front-end.</td>
+</tr>
+<tr>
+<td style="width: 218px;">&nbsp;<strong>October 12 [Friday]</strong></td>
+<td style="width: 551px;">Create a plan for using TensorFlow to make predictions on data</td>
+</tr>
+<tr>
+<td style="width: 218px;">&nbsp;<strong>October 19 [Friday]</strong></td>
+<td style="width: 551px;">Have a simple web-server that displays data and allows modification of DB</td>
+</tr>
+<tr>
+<td style="width: 218px;">&nbsp;<strong>October 31 [Saturday]</strong></td>
+<td style="width: 551px;"><strong><span style="color: #ff0000;">Initial Demo!</span></strong></td>
+</tr>
+<tr>
+<td style="width: 218px;">&nbsp;<strong>November 9 [Friday]</strong></td>
+<td style="width: 551px;">Finish front-end design, working prototype without predictions.</td>
+</tr>
+<tr>
+<td style="width: 218px;">&nbsp;<strong>November 20 [Tuesday]</strong></td>
+<td style="width: 551px;">Working TensorFlow predictions, working TensorFlow post suggestions.</td>
+</tr>
+<tr>
+<td style="width: 218px;">&nbsp;<strong>November 30 [Friday]</strong></td>
+<td style="width: 551px;"><span style="color: #00ff00;"><span style="color: #00ff00;"><span style="color: #228b22;"><strong>Project Completed!</strong></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
