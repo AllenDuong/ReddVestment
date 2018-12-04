@@ -1,0 +1,5 @@
+- When user accepts a game invite, create webpage for the versus game
+    - Update database upon what the players pick in the game
+    - Update Games database, value accepted based on both people betting on something
+    - Implement suggested choice
+    - Create a wins column in Games database

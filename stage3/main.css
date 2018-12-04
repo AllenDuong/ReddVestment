@@ -1,0 +1,80 @@
+h1 { font-family: Verdana, Geneva, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Verdana, Geneva, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Verdana, Geneva, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Verdana, Geneva, sans-serif; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Verdana, Geneva, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button[class=changeButton] {
+    border: 1px solid #0066cc;
+    background-color: #0099cc;
+    color: #ffffff;
+    padding: 5px 10px;
+    width: 150px;
+}
+
+button[class=changeButton]:hover {
+    border: 1px solid #0099cc;
+    background-color: #00aacc;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+button[class=changeButton]:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+button[class=deleteButton] {
+    border: 1px solid #ff0000;
+    background-color: #ff3300;
+    color: #ffffff;
+    padding: 5px 10px;
+    width: 150px;
+}
+
+button[class=deleteButton]:hover {
+    border: 1px solid #ff0000;
+    background-color: #ff6666;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+button[class=submitButton] {
+    border: 1px solid #0066cc;
+    background-color: #0099cc;
+    color: #ffffff;
+    padding: 5px 10px;
+    width: 100px;
+}
+
+button[class=submitButton]:hover {
+    border: 1px solid #0099cc;
+    background-color: #00aacc;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+button[class=submitButton]:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+form {
+    margin: auto;
+    padding: 10px 20px;
+    border: 2px solid #f1f1f1;
+    width: 400px;
+}
+
+body {
+    margin-right:0;
+}
+html {
+    margin-right:0;
+}
