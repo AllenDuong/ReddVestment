@@ -30,12 +30,14 @@ def insertPost(subreddit, created, p_id, author, title, url, score, is_self, gil
         return 1
 
     cursor = conn.cursor()
+    # Command to insert post information into the database
     command = ('INSERT IGNORE INTO Posts '
                    + 'VALUES(\'%s\', %d, \'%s\', \'%s\', \'%s\', \'%s\', %d, %i, %d, NULL, NULL, \'%s\', NULL, NULL, %d, NULL, NULL, NULL, %d);'
                    % (subreddit, int(created), p_id, author, title, url, score, is_self, gilded, thumbnail, first_comments, predicted_score))
     command = command.encode('ascii', errors='ignore')
 
     try:
+        # Attempt to execute and commit the command
         cursor.execute(command)
         conn.commit()
     except Exception as e:
@@ -51,11 +53,13 @@ def insertPost(subreddit, created, p_id, author, title, url, score, is_self, gil
 def scrapeNewFromSubreddit(subreddit):
     # Scrape 100 most recent posts form specified subreddit
     
+    # Load predictor model for the subreddit
     modelname = ('./models/model_%s.pkl' % subreddit)
     predict_model = pickle.load(open(modelname, 'rb'))
     vectorizer = pickle.load(open(('./models/vect_%s.pkl' % subreddit), 'rb'))
     
     try:
+        # Attempt to grab 100 most recent posts from reddit
         REDDIT_URL = 'https://www.reddit.com/r/%s/new.json?limit=100' % subreddit
         response = requests.get(REDDIT_URL, headers=headers)
         r_data = json.loads(response.text)
@@ -66,6 +70,7 @@ def scrapeNewFromSubreddit(subreddit):
 
     for item in r_data['data']['children']:
         #print('--------------')
+        # Grab all information that we need from post
         item = item['data']
         subreddit = item['subreddit'].replace('\'', '\'').replace('\"', '\"')
         created = item['created_utc']
@@ -93,7 +98,7 @@ def scrapeNewFromSubreddit(subreddit):
             X_test = vectorizer.transform(X_title[0].values.astype('U'))
             X_test = hstack([X_test])
             
-            # get the prediction
+            # get prediction of how well post will do
             result = predict_model.predict(X_test)
             
             # insert post into database
@@ -143,7 +148,7 @@ def updatePosts():
         post_time = row[1]
         p_id = row[2]
         if time.time() - post_time >= 43200 and time.time() - post_time <= 43800:
-            # If post is older than twelve hours update the second_score field
+            # If post is older than twelve hours update the third_score field
             try:
                 response = requests.get(UPDATE_URL+'t3_'+p_id+'.json', headers=headers)
                 r_data = json.loads(response.text)

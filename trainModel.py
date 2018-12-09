@@ -44,11 +44,3 @@ for sub in slist:
     filename = ('./models/vect_%s.pkl' % sub)
     pickle.dump(vectorizer, open(filename, 'wb'))
 
-    #X_test = vectorizer.transform(test[0].values.astype('U'))
-    #X_test = hstack([X_test])
-
-    #result = clf.predict(X_test)
-
-    #with open(('./results/result_%s.txt' % sub), 'w') as results: 
-    #    for item in result:
-    #        results.write(str(item) + '\n')
