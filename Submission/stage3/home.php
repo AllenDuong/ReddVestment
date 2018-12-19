@@ -87,7 +87,7 @@
       <div class="list-group" id="redditTable">';
       while ($tuple = mysqli_fetch_array($result, MYSQL_ASSOC)) {
           // The formatting looks bad, but basically it creates a table that shows the score, reddit image, and reddit description for each post. It also creates a linkthat goes to the actual reddit post
-          echo '<a target="_blank" href="http://reddit.com/'. $tuple["id"] .'" type="button"'; 
+          echo '<a target="_blank" href="https://redd.it/'. $tuple["id"] .'" type="button"'; 
           if ($tuple["player2"] == ""){
               echo 'class="list-group-item list-group-item-action">';
           } else{
